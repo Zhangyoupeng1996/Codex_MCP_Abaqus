@@ -1,0 +1,39 @@
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+
+# Abaqus runtime and result files
+*.cae
+*.odb
+*.inp
+*.dat
+*.msg
+*.sta
+*.log
+*.com
+*.prt
+*.sim
+*.lck
+*.jnl
+*.rec
+*.rpy
+*.ipm
+abaqus_acis.log
+
+# MCP runtime IPC files
+commands/
+results/
+scripts/script_*.py
+screenshots/
+status.json
+status.json.tmp
+stop.flag
+mcp.log
+thread_error.log
+gui_error.txt
+
+# Local output directories
+abaqus_*_cantilever/
+classic_cantilever_beam/

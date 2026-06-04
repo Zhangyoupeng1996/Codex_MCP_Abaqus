@@ -1,0 +1,8 @@
+[mcp_servers.abaqus]
+command = 'python'
+args = ['D:\path\to\Codex_MCP_Abaqus\src\mcp_server.py']
+cwd = 'D:\path\to\Codex_MCP_Abaqus'
+startup_timeout_sec = 120
+
+[mcp_servers.abaqus.env]
+ABAQUS_MCP_HOME = 'D:\path\to\Codex_MCP_Abaqus'
