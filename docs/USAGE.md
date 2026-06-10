@@ -73,7 +73,7 @@ mcp_stop()
 
 ## Running the Classic Example Without MCP
 
-You can also run the example directly:
+You can also run the cantilever example directly:
 
 ```powershell
 abaqus cae noGUI=D:\path\to\Codex_MCP_Abaqus\examples\abaqus_cantilever_classic.py
@@ -85,6 +85,28 @@ The script creates:
 - `classic_cantilever_beam.inp`
 - `classic_cantilever_beam.odb`
 - `result_summary.json`
+
+You can run the tensile example directly:
+
+```powershell
+abaqus cae noGUI=D:\path\to\Codex_MCP_Abaqus\examples\abaqus_tensile_bar_classic.py
+```
+
+The script creates:
+
+- `classic_tensile_bar.cae`
+- `classic_tensile_bar.inp`
+- `classic_tensile_bar.odb`
+- `result_summary.json`
+
+To display the tensile ODB in a visible Abaqus/CAE viewport:
+
+```powershell
+abaqus cae startup=D:\path\to\Codex_MCP_Abaqus\examples\show_tensile_result_viewport.py
+```
+
+See `docs\TENSILE_MCP_WORKFLOW.md` for the full MCP query and viewport display
+workflow.
 
 ## Troubleshooting
 
@@ -103,4 +125,3 @@ If Abaqus GUI becomes sluggish:
 
 - Stop MCP polling with `stop.flag`.
 - Prefer noGUI worker for automated simulations.
-

@@ -37,3 +37,4 @@ gui_error.txt
 # Local output directories
 abaqus_*_cantilever/
 classic_cantilever_beam/
+examples/output/

@@ -18,8 +18,15 @@ scripts, and a classic finite element example verified on Abaqus 2022.
   noGUI worker launcher script. Recommended for stable background simulation.
 - `examples/abaqus_cantilever_classic.py`  
   Classic 3D cantilever beam static bending example.
+- `examples/abaqus_tensile_bar_classic.py`  
+  Classic 3D displacement-controlled tensile bar example.
+- `examples/show_tensile_result_viewport.py`  
+  Visible Abaqus/CAE viewport startup script for the tensile ODB result.
 - `docs/USAGE.md`  
   Setup and operating notes.
+- `docs/TENSILE_MCP_WORKFLOW.md`  
+  End-to-end notes for generating the tensile project, querying it through MCP,
+  and displaying the result in the Abaqus viewport.
 
 ## Recommended Mode
 
@@ -83,6 +90,27 @@ Typical result:
 - Maximum displacement: about `2.037 mm`
 - Maximum Mises stress: about `471 MPa`
 
+The included tensile example uses:
+
+- Geometry: `100 mm x 10 mm x 10 mm`
+- Material: linear elastic steel, `E = 210000 MPa`, `nu = 0.3`
+- Element: `C3D8R`
+- Boundary condition: fixed left end
+- Loading: right-end prescribed axial displacement `U1 = 1 mm`
+
+Typical result:
+
+- Engineering strain: `0.01`
+- Nominal stress: about `2100 MPa`
+- Apparent modulus: about `210000 MPa`
+
+To display the tensile result in a visible Abaqus/CAE viewport after generating
+the ODB:
+
+```powershell
+abaqus cae startup=examples\show_tensile_result_viewport.py
+```
+
 ## Notes
 
 The plugin in this repository includes compatibility fixes for Abaqus 2022's
@@ -91,4 +119,3 @@ Python 2 kernel:
 - Unicode-safe JSON and text writes
 - Captured stdout/stderr for `execute_script`
 - Stale heartbeat diagnostics in the MCP server
-
